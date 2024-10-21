@@ -2,7 +2,7 @@ import React from "react";
 import arrowSvg from "../images/down-arrow.svg";
 import PropTypes from "prop-types";
 
-import image from "../images/laptopboy.png";
+import image from "../images/boy.png";
 
 const imageAltText = "profile image";
 
