@@ -1,7 +1,5 @@
- 
 import React from "react";
 import PropTypes from "prop-types";
-
 
 import envelopeIcon from "../images/socials/envelope.svg";
 import gitHubIcon from "../images/socials/github.svg";
@@ -30,22 +28,24 @@ const Footer = (props) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: "2.5rem",
-        padding: "5rem 0 3rem",
+        gap: "1.5rem",
+        padding: "2rem 0 2rem",
         backgroundColor: primaryColor,
         width: "100vw",
+        textAlign: "center",
       }}
     >
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          gap: "2.5rem",
+          gap: "1.5rem",
+          flexWrap: "wrap",
         }}
       >
         {email && (
           <a href={`mailto:chavanpruthviraj9595@gmail.com ${email}`}>
-            <img src={envelopeIcon} alt="email" className="socialIcon" />
+            <img src={envelopeIcon} alt="email" style={{ height: "2rem", width: "2rem" }} />
           </a>
         )}
 
@@ -55,7 +55,7 @@ const Footer = (props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={gitHubIcon} alt="GitHub" className="socialIcon" />
+            <img src={gitHubIcon} alt="GitHub" style={{ height: "2rem", width: "2rem" }} />
           </a>
         )}
         {instagram && (
@@ -64,7 +64,7 @@ const Footer = (props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={instagramIcon} alt="Instagram" className="socialIcon" />
+            <img src={instagramIcon} alt="Instagram" style={{ height: "2rem", width: "2rem" }} />
           </a>
         )}
         {linkedIn && (
@@ -73,7 +73,7 @@ const Footer = (props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={linkedInIcon} alt="LinkedIn" className="socialIcon" />
+            <img src={linkedInIcon} alt="LinkedIn" style={{ height: "2rem", width: "2rem" }} />
           </a>
         )}
         {medium && (
@@ -82,11 +82,11 @@ const Footer = (props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={mediumIcon} alt="Medium" className="socialIcon" />
+            <img src={mediumIcon} alt="Medium" style={{ height: "2rem", width: "2rem" }} />
           </a>
         )}
       </div>
-      <p className="small" style={{ marginTop: 0, color: "white" }}>
+      <p style={{ marginTop: 0, color: "white", fontSize: "0.9rem" }}>
         Created by {name}
       </p>
     </div>

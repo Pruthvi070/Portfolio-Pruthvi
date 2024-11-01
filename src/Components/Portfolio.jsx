@@ -1,34 +1,8 @@
-/**
- * Portfolio component
- *
- * Highlights some of  your creations. These can be designs, websites,
- * open source contributions, articles you've written and more.
- *
- * This is a great area for you to to continually add to and refine
- * as you continue to learn and create.
- */
-
 import React from "react";
-
-/**
- * Desk image
- *
- * Below is a sample desk image. Feel free to update this to an image of your choice,
- * updating below imageAltText to string that represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
- */
 import image from "../images/webdev.png";
 
 const imageAltText = "desktop with books and laptop";
 
-/**
- * Project list
- *
- * An array of objects that will be used to display for your project
- * links section. Below is a sample, update to reflect links you'd like to highlight.
- */
 const projectList = [
   {
     title: "Memories Post App 🎉",
@@ -39,34 +13,70 @@ const projectList = [
   {
     title: "Food Delivery App",
     description:
-      "This project begins with the development of the Home page, where users can view a menu and browse various food items. You will then create a Cart page and an Order page to facilitate the ordering process. Additionally, a Sign In/Sign Up popup will be implemented to enable user authentication The app will be built using React.js, MongoDB, Express, Node.js, and will integrate the Stripe payment gateway for secure online payments. User authentication will allow anyone to create an account and log in, while shopping cart functionality will enable users to add food items and place orders seamlessly. Furthermore, order status update features will enhance the user experience by keeping customers informed about their order progress.",
-
+      "This project begins with the development of the Home page, where users can view a menu and browse various food items. You will then create a Cart page and an Order page to facilitate the ordering process. Additionally, a Sign In/Sign Up popup will be implemented to enable user authentication. The app will be built using React.js, MongoDB, Express, Node.js, and will integrate the Stripe payment gateway for secure online payments. User authentication will allow anyone to create an account and log in, while shopping cart functionality will enable users to add food items and place orders seamlessly. Furthermore, order status update features will enhance the user experience by keeping customers informed about their order progress.",
     url: "https://github.com/Pruthvi070/FOOD.git",
   },
- 
 ];
 
 const Portfolio = () => {
+  const sectionStyle = {
+    padding: "2rem 1rem",
+    textAlign: "center",
+  };
+
+  const imageContainerStyle = {
+    maxWidth: "100%",
+    flex: "1 1 40%",
+    alignSelf: "center",
+  };
+
+  const imageStyle = {
+    height: "auto",
+    width: "100%",
+    maxHeight: "400px",
+    objectFit: "cover",
+  };
+
+  const projectContainerStyle = {
+    flex: "2 1 60%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    padding: "0 1rem",
+  };
+
+  const projectBoxStyle = {
+    margin: "1rem 0",
+    padding: "1rem",
+    border: "1px solid #ddd",
+    borderRadius: "5px",
+    textAlign: "left",
+  };
+
   return (
-    <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
+    <section style={sectionStyle} id="portfolio">
+      <h2>Portfolio</h2>
       <div
-        style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}
+        style={{
+          display: "flex",
+          flexDirection: window.innerWidth < 768 ? "column" : "row",
+          paddingTop: "3rem",
+        }}
       >
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
+        <div style={imageContainerStyle}>
           <img
             src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
+            style={imageStyle}
             alt={imageAltText}
           />
         </div>
-        <div className="container">
+        <div style={projectContainerStyle}>
           {projectList.map((project) => (
-            <div className="box" key={project.title}>
+            <div style={projectBoxStyle} key={project.title}>
               <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
+                <h3>{project.title}</h3>
               </a>
-              <p className="small">{project.description}</p>
+              <p style={{ fontSize: "0.9rem" }}>{project.description}</p>
             </div>
           ))}
         </div>
